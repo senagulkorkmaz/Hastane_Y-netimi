@@ -28,11 +28,12 @@ public class temizlikPersonelGiris extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        lbltc = new javax.swing.JLabel();
+        lblsifre = new javax.swing.JLabel();
+        tctxt = new javax.swing.JTextField();
+        girisbutton = new javax.swing.JButton();
+        sifretxt = new javax.swing.JPasswordField();
+        uyarilbl = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -51,24 +52,18 @@ public class temizlikPersonelGiris extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("E-MAİL:");
+        lbltc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbltc.setText("TC:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("ŞİFRE:");
+        lblsifre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblsifre.setText("ŞİFRE:");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        girisbutton.setBackground(new java.awt.Color(204, 153, 255));
+        girisbutton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        girisbutton.setText("GİRİŞ");
+        girisbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setBackground(new java.awt.Color(204, 153, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("GİRİŞ");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                girisbuttonActionPerformed(evt);
             }
         });
 
@@ -78,49 +73,71 @@ public class temizlikPersonelGiris extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(24, 24, 24)
-                            .addComponent(jTextField2)))
-                    .addComponent(jButton2))
-                .addGap(0, 37, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbltc)
+                                    .addComponent(lblsifre))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tctxt, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                                    .addComponent(sifretxt)))
+                            .addComponent(uyarilbl, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 33, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(girisbutton)
+                        .addGap(19, 19, 19))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
+                .addContainerGap(162, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbltc)
+                    .addComponent(tctxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(jButton2)
-                .addGap(22, 22, 22))
+                    .addComponent(lblsifre)
+                    .addComponent(sifretxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(uyarilbl, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(girisbutton)
+                .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    private void girisbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_girisbuttonActionPerformed
+        int tp1, tp2, tp3;
+        int sifre1, sifre2, sifre3;
+        tp1 = 246;
+        sifre1 = 246;
+        tp2 = 135;
+        sifre2 = 135;
+        tp3 = 468;
+        sifre3 = 468;
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        temizlik_personeli_giris p = new temizlik_personeli_giris();
+        if (Integer.valueOf(tctxt.getText()) == tp1 && Integer.valueOf(sifretxt.getText()) == sifre1) {
+             temizlik_personeli_giris p = new temizlik_personeli_giris();
         p.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        } else if (Integer.valueOf(tctxt.getText()) == tp2 && Integer.valueOf(sifretxt.getText()) == sifre2) {
+            temizlik_personeli_giris p = new temizlik_personeli_giris();
+        p.setVisible(true);
+        } else if (Integer.valueOf(tctxt.getText()) == tp3 && Integer.valueOf(sifretxt.getText()) == sifre3) {
+           temizlik_personeli_giris p = new temizlik_personeli_giris();
+        p.setVisible(true);
+        } else {
+            uyarilbl.setText("KULLANICI ADINIZ VEYA ŞİFRE HATALI!");
+        }
+       
+    }//GEN-LAST:event_girisbuttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,12 +175,13 @@ public class temizlikPersonelGiris extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton girisbutton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblsifre;
+    private javax.swing.JLabel lbltc;
+    private javax.swing.JPasswordField sifretxt;
+    private javax.swing.JTextField tctxt;
+    private javax.swing.JLabel uyarilbl;
     // End of variables declaration//GEN-END:variables
 }
